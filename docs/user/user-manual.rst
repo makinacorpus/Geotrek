@@ -72,7 +72,7 @@ Tous les modules sont construits de la même façon :
 * la possibilité d'exporter les résultats en CSV (pour EXCEL ou CALC), en SHAPEFILE (pour QGIS ou ArcGIS) et en GPX (pour l'importer dans un GPS)
 * une carte dans laquelle il est possible de naviguer (déplacer, zoomer), d'afficher en plein écran, de mesurer une longueur, d'exporter une image de la carte, de réinitialiser l'étendue, de zommer sur une commune ou un secteur et de choisir les couches à afficher
 
-.. image :: images/user-manual/01-liste-fr.jpg
+.. image :: /images/user-manual/01-liste-fr.jpg
 
 Au survol d'un objet dans la liste, celui-ci est mis en surbrillance sur la carte. 
 
@@ -227,11 +227,11 @@ Lorsque l'on localise un itinéraire, il est aussi possible de localiser le park
 
 Ces derniers servent à y faire référence dans le champs Description de l'itinéraire (Pas à pas) :
 
-.. image :: images/user-manual/references-geotrek-rando.jpg
+.. image :: /images/user-manual/references-geotrek-rando.jpg
 
 Pour que des puces numérotées sous forme de pastilles rouges soient affichées dans la description, il suffit de les saisir en tant que Liste numérotées dans le champs Description : 
 
-.. image :: images/user-manual/references-geotrek-admin.jpg
+.. image :: /images/user-manual/references-geotrek-admin.jpg
 
 **Ordre des catégories** :
 
@@ -252,20 +252,21 @@ Pages statiques
 
 Les pages statiques sont les pages d'information et de contextualisation de votre portail web Geotrek-rando. Comme pourraient l'être les premières pages d'un topo-guide papier. Elles peuvent aussi être consultées dans votre application Geotrek-mobile.
 
-.. image :: images/user-manual/flatpages-gtecrins.jpg
-*Exemple de page statique (http://www.grand-tour-ecrins.fr/informations/le-grand-tour-des-ecrins/)*
+.. figure :: /images/user-manual/flatpages-gtecrins.jpg
+
+    Exemple de page statique (http://www.grand-tour-ecrins.fr/informations/le-grand-tour-des-ecrins/)
 
 Elles permettent de fournir à l'internaute et futur randonneur des informations génériques : présentation de votre structure, votre projet de randonnée, recommandations, informations pratiques, etc.
 
 Elles sont gérées depuis l'administe de Geotrek-admin et sont ensuite publiées sur Geotrek-rando à chaque synchronisation du contenu. 
 
-.. image :: images/user-manual/flatpages-adminsite.jpg
+.. image :: /images/user-manual/flatpages-adminsite.jpg
 
 **Créer une page statique**
 
 Depuis l'Adminsite de Geotrek, sélectionnez "Pages statiques" dans la rubrique "Flatpages".
 
-.. image :: images/user-manual/flatpages-flatpages.png
+.. image :: /images/user-manual/flatpages-flatpages.png
 
 Vous accédez alors à la liste des pages statiques. 
 Cliquer sur "Ajouter Page statique" en haut à droite de l'écran pour créer une première page.
@@ -284,25 +285,25 @@ Saisissez :
 
 Attention, à chaque fois que cela vous est demandé, veillez à sélectionner la langue de votre contenu.
 
-.. image :: images/user-manual/flatpages-form.jpg
+.. image :: /images/user-manual/flatpages-form.jpg
 
 L'interface permet de construire sa page en responsive design, c'est-à-dire qu'il est possible de disposer les blocs de contenu pour s'adaptera aux différentes tailles d'écrans des utilisateurs.
 
-.. image :: images/user-manual/flatpages-bootstrap-responsive.jpg
+.. image :: /images/user-manual/flatpages-bootstrap-responsive.jpg
 
 Choisissez le gabarit sur lequel vous souhaitez construire votre page : 12 / 6-6 / 4-4-4 / etc. Ce sont des formats prédéfinis d'assemblage de blocs basés sur 12 colonnes qui occupent 100% de la largeur de l'écran (Bootstrap).
 
-.. image :: images/user-manual/flatpages-bootstrap-grids.jpg
+.. image :: /images/user-manual/flatpages-bootstrap-grids.jpg
 
 Vous pouvez aussi utiliser ou vous inspirer des 2 gabarits d'exemple (Gabarit 1 et Gabarit 2).
 
-.. image :: images/user-manual/flatpages-blocks.jpg
+.. image :: /images/user-manual/flatpages-blocks.jpg
 
 Vous pouvez ajouter autant de gabarits que vous le souhaitez sur une seule page.
 
 Une fois que vous avez ajusté vos blocs de contenu pour un affiche sur ordinateur (Desktop), vous devez basculer sur l'affichage sur mobile (Phone) pour l'adapter à des plus petits écrans (en cliquant sur les + et - bleus de chaque bloc). Privilégiez alors des blocs sur une colonne faisant 100% de large.
 
-.. image :: images/user-manual/flatpages-blocks-edit.jpg
+.. image :: /images/user-manual/flatpages-blocks-edit.jpg
 
 **Ajouter du contenu dans un bloc**
 
@@ -312,7 +313,7 @@ En cliquant dans la zone de texte, une barre d'édition apparaît. Sur un format
 * Edit : retour, copier-coller, 
 * Insert : Insérer une image, un lien, des caractères spéciaux
 
-.. image :: images/user-manual/flatpages-wysiwyg.jpg
+.. image :: /images/user-manual/flatpages-wysiwyg.jpg
 	
 Insérer une image : cela ouvre une nouvelle fenêtre avec différents champs à remplir :
 
@@ -376,7 +377,7 @@ Il est possible d'exclure les POI du flux pour ne diffuser que les randonnées. 
 
 Le référentiel CIRKWI a été intégré dans 3 tables accessibles dans l'Adminsite (à ne pas modifier) : 
 
-.. image :: images/user-manual/cirkwi-tables.png
+.. image :: /images/user-manual/cirkwi-tables.png
 
 Si vous ne souhaitez pas utiliser les valeurs par défaut ou avez créez vos propres typologies, il faut que vous renseigniez les correspondances entre les catégories de votre Geotrek et celles du référentiel IGN (Cirkwi) dans votre Adminsite. Comme indiqué ici : https://github.com/GeotrekCE/Geotrek-admin/issues/806
 
