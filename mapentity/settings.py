@@ -35,6 +35,7 @@ app_settings = dict({
     'MAPENTITY_WEASYPRINT': False,
 }, **getattr(settings, 'MAPENTITY_CONFIG', {}))
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
