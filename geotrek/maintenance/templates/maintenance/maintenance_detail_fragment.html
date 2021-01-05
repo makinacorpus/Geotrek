@@ -21,7 +21,7 @@
             {% is_blade_model model as is_blade_model %}
             {% if perms.maintenance.add_intervention %}
             <p class="autohide"><a href="{% url 'maintenance:intervention_add' %}{% if is_topology_model or is_blade_model %}?target_id={{ object.pk }}&target_type={{ object.get_content_type_id }}{% endif %}" class="btn btn-light btn-sm btn-success">
-                <i class="icon-plus icon-white"></i> {% trans "Add a new intervention" %}</a>
+                <i class="bi bi-plus"></i> {% trans "Add a new intervention" %}</a>
             </p>
             {% endif %}
 
