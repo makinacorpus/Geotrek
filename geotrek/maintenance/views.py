@@ -1,5 +1,6 @@
 import logging
 
+from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 from mapentity.views import (MapEntityLayer, MapEntityList, MapEntityJsonList, MapEntityFormat, MapEntityViewSet,
                              MapEntityDetail, MapEntityDocument, MapEntityCreate, MapEntityUpdate, MapEntityDelete)
@@ -83,6 +84,7 @@ class InterventionUpdate(ManDayFormsetMixin, MapEntityUpdate):
     form_class = InterventionForm
 
     @same_structure_required('maintenance:intervention_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(InterventionUpdate, self).dispatch(*args, **kwargs)
 

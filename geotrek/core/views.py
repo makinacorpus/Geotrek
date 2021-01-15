@@ -6,6 +6,7 @@ from django.contrib.gis.db.models.functions import Transform
 from django.contrib.auth.decorators import permission_required
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.views.decorators.http import last_modified as cache_last_modified
@@ -363,6 +364,7 @@ class TrailUpdate(MapEntityUpdate):
     form_class = TrailForm
 
     @same_structure_required('core:trail_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(TrailUpdate, self).dispatch(*args, **kwargs)
 

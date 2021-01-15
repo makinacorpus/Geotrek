@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.gis.db.models.functions import Transform
+from django.db import transaction
 from django.http import HttpResponse
 
 import logging
@@ -75,6 +76,7 @@ class SignageUpdate(MapEntityUpdate):
     form_class = SignageForm
 
     @same_structure_required('signage:signage_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(SignageUpdate, self).dispatch(*args, **kwargs)
 

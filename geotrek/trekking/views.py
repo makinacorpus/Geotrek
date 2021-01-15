@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.gis.db.models.functions import Transform
+from django.db import transaction
 from django.db.models import Q
 from django.db.models.query import Prefetch
 from django.http import HttpResponse, Http404
@@ -220,6 +221,7 @@ class TrekUpdate(TrekRelationshipFormsetMixin, MapEntityUpdate):
     form_class = TrekForm
 
     @same_structure_required('trekking:trek_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(TrekUpdate, self).dispatch(*args, **kwargs)
 
@@ -316,6 +318,7 @@ class POIUpdate(MapEntityUpdate):
     form_class = POIForm
 
     @same_structure_required('trekking:poi_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(POIUpdate, self).dispatch(*args, **kwargs)
 
@@ -462,6 +465,7 @@ class ServiceUpdate(MapEntityUpdate):
     form_class = ServiceForm
 
     @same_structure_required('trekking:service_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(ServiceUpdate, self).dispatch(*args, **kwargs)
 

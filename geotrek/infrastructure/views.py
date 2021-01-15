@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.gis.db.models.functions import Transform
+from django.db import transaction
 
 from mapentity.views import (MapEntityLayer, MapEntityList, MapEntityJsonList, MapEntityFormat,
                              MapEntityDetail, MapEntityDocument, MapEntityCreate, MapEntityUpdate, MapEntityDelete)
@@ -63,6 +64,7 @@ class InfrastructureUpdate(MapEntityUpdate):
     form_class = InfrastructureForm
 
     @same_structure_required('infrastructure:infrastructure_detail')
+    @transaction.atomic  # required to prevent TMP topologies in case of interruption
     def dispatch(self, *args, **kwargs):
         return super(InfrastructureUpdate, self).dispatch(*args, **kwargs)
 
